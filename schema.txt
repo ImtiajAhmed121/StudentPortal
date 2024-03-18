@@ -1,0 +1,18 @@
+
+CREATE TABLE Class (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(50),
+    CreatedDate DATETIME ,
+    ModificationDate DATETIME 
+);
+
+CREATE TABLE Student (
+    Id UNIQUEIDENTIFIER PRIMARY KEY,
+    Name VARCHAR(50),
+    Gender INT,
+    DOB DATETIME,
+    ClassId INT,
+    CreatedDate DATETIME ,
+    ModificationDate DATETIME ,
+    FOREIGN KEY (ClassId) REFERENCES Class(Id)
+);
